@@ -1,0 +1,18 @@
+route:
+  routes:
+  - name: abc
+    match:
+      alertname: DeadMansSwitch
+    continue: true
+  - name: abc2
+    match_re:
+      alertname: DeadMansSwitch.*?
+    continue:
+  - name: abc3
+    match:
+      ultraman: DeadMansSwitch
+    routes:
+    - name: abc4
+      match:
+        height: 100
+    continue: false
